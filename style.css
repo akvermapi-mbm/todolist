@@ -1,0 +1,217 @@
+/* ========================================
+   GLOBAL STYLES
+   ======================================== */
+
+/* Reset default browser margins/padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  /* Makes width include padding/border */
+}
+
+/* Body styling - applies to entire page */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;  /* Full viewport height */
+  display: flex;
+  justify-content: center;  /* Center horizontally */
+  align-items: center;      /* Center vertically */
+  padding: 20px;
+}
+
+/* ========================================
+   MAIN CONTAINER
+   ======================================== */
+
+.container {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 550px;  /* Don't get too wide on big screens */
+  padding: 30px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 25px;
+  font-size: 2rem;
+}
+
+/* ========================================
+   INPUT SECTION
+   ======================================== */
+
+.input-section {
+  display: flex;
+  gap: 10px;  /* Space between input and button */
+  margin-bottom: 25px;
+}
+
+#taskInput {
+  flex: 1;  /* Takes remaining space */
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+#taskInput:focus {
+  outline: none;
+  border-color: #667eea;  /* Purple border when focused */
+}
+
+#addBtn {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.1s;
+}
+
+#addBtn:hover {
+  background: #5a67d8;  /* Darker on hover */
+}
+
+#addBtn:active {
+  transform: scale(0.98);  /* Slight press effect */
+}
+
+/* ========================================
+   FILTER BUTTONS
+   ======================================== */
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.filter-btn {
+  background: #f0f0f0;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.filter-btn:hover {
+  background: #e0e0e0;
+}
+
+.filter-btn.active {
+  background: #667eea;
+  color: white;
+}
+
+/* ========================================
+   TASK LIST
+   ======================================== */
+
+#taskList {
+  list-style: none;  /* Remove bullet points */
+  margin-bottom: 20px;
+  max-height: 400px;
+  overflow-y: auto;  /* Scroll if too many tasks */
+}
+
+/* Individual task item */
+.task-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: all 0.3s;
+}
+
+.task-item:hover {
+  background: #e9ecef;
+  transform: translateX(5px);
+}
+
+/* Checkbox styling */
+.task-checkbox {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+/* Task text */
+.task-text {
+  flex: 1;
+  font-size: 16px;
+  color: #333;
+  word-break: break-word;
+}
+
+/* Completed task text (strikethrough) */
+.task-text.completed {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+/* Delete button */
+.delete-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background 0.3s;
+}
+
+.delete-btn:hover {
+  background: #c82333;
+}
+
+/* ========================================
+   COUNTER SECTION
+   ======================================== */
+
+.counter {
+  text-align: center;
+  padding-top: 15px;
+  border-top: 2px solid #f0f0f0;
+  color: #666;
+  font-size: 14px;
+}
+
+#taskCount {
+  font-weight: bold;
+  color: #667eea;
+  font-size: 18px;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* On small screens, stack input and button */
+@media (max-width: 500px) {
+  .container {
+    padding: 20px;
+  }
+
+  .input-section {
+    flex-direction: column;
+  }
+
+  .filters {
+    flex-wrap: wrap;
+  }
+}
