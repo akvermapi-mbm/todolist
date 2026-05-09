@@ -14,7 +14,7 @@ A simple, beautiful to-do list application that saves your tasks in your browser
 
 ## 🚀 Live Demo
 
-[View Live Demo](https://yourusername.github.io/todo-list-app)
+[View Live Demo](https://yourusername.github.io/todolist)
 
 ## 🛠️ Technologies Used
 
